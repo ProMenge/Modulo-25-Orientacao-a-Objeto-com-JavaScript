@@ -46,12 +46,14 @@ const carroDaMaria2 = new Carro("KA", "Ford", 2021, 2020);
 // ANALISANDO E DESCOBRINDO INSTACIAS
 
 const nome = "Fred";
+const sobrenome = "Menge"
 const idade = 20;
 const eMaiorDeIdade = true;
 const conhecimentos = ["html", "CSS", "Javascript", "NodeJS"]
 
 const pessoa = {
     nome: nome,
+    sobrenome: sobrenome,
     idade: idade,
     eMaiorDeIdade: eMaiorDeIdade,
     conhecimentos: conhecimentos,
@@ -64,6 +66,41 @@ const pessoa = {
 // console.log(typeof conhecimentos);
 // console.log(typeof pessoa);
 
-console.log(carroDaMaria2 instanceof Carro);
-console.log(conhecimentos instanceof Array);
-console.log(pessoa instanceof Array);
+// console.log(carroDaMaria2 instanceof Carro);
+// console.log(conhecimentos instanceof Array);
+// console.log(pessoa instanceof Array);
+
+
+// --------------------------------------------------------
+//Acessando Atributos
+
+// console.log(pessoa.nome);
+// console.log(pessoa['nome']);
+
+function exibeAtributo(nomeAtributo) {
+
+    console.log(pessoa[nomeAtributo]);
+}
+
+
+exibeAtributo('nome')
+
+// pessoa['sobrenome'] = undefined;
+
+if (pessoa['sobrenome']) {
+
+    console.log(" Apessoa tem sobrenome")
+}
+
+if ('sobrenome' in pessoa) {
+
+    console.log("Tem Sobrenome!")
+}
+
+Object.freeze(pessoa);
+
+pessoa.nome = "joao"
+
+console.log(Object.keys(pessoa));
+console.log(Object.values(pessoa));
+
